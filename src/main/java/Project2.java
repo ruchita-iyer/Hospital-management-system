@@ -342,6 +342,20 @@ public class Project2 extends javax.swing.JFrame {
         aList.add(pro);
         count++;
         
+        String data[]={nametxt.getText(),agetxt.getText(),numtxt.getText(),gentxt.getText(),emailtxt.getText(),idtxt.getText(),datetxt.getText(),leveltxt.getText(),teamtxt.getText(),titletxt.getText()};
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(data);
+        
+        nametxt.setText("");
+        agetxt.setText("");
+        numtxt.setText("");
+        gentxt.setText("");
+        emailtxt.setText("");
+        idtxt.setText("");
+        datetxt.setText("");
+        leveltxt.setText("");
+        teamtxt.setText("");
+        titletxt.setText("");
 
 
 
