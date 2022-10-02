@@ -1,4 +1,5 @@
 
+import java.awt.Component;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
@@ -6,48 +7,49 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author ruchi
  */
 public class Project2 extends javax.swing.JFrame {
-    
-    private ArrayList <Project2> aList;
-    
-    private String name, gender, email, id, date, level,team, title;
+
+    private ArrayList<Project2> aList;
+
+    private String name, gender, email, id, date, level, team, title;
     private int age;
     private int number;
     private int count;
-    
 
     /**
      * Creates new form Project2
      */
     public Project2() {
         initComponents();
-        
-        aList=new ArrayList<>();
-        name=new String();
-        age=0;
-        number=0;
-        gender=new String();
-        email=new String();
-        id=new String();
-        date=new String();
-        level=new String();
-        team=new String();
-        title=new String();
-        count=0;
-        
-                }
+
+        aList = new ArrayList<>();
+        name = new String();
+        age = 0;
+        number = 0;
+        gender = new String();
+        email = new String();
+        id = new String();
+        date = new String();
+        level = new String();
+        team = new String();
+        title = new String();
+        count = 0;
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -195,8 +197,6 @@ public class Project2 extends javax.swing.JFrame {
 
         jLabel14.setText("Please upload photo");
 
-        photo.setText("jLabel15");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -248,22 +248,26 @@ public class Project2 extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel13)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(photo))
-                                        .addGap(82, 82, 82)
+                                                .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton3)
-                                            .addComponent(jButton1)
-                                            .addComponent(jButton5)
-                                            .addComponent(jButton4)))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(82, 82, 82)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jButton3)
+                                                    .addComponent(jButton1)
+                                                    .addComponent(jButton5)
+                                                    .addComponent(jButton4)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(60, 60, 60)
+                                                .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel14)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(malerb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(femalerb)))
-                                .addGap(37, 37, 37)
+                                .addComponent(malerb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(femalerb))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2)))))
                 .addContainerGap(114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -309,21 +313,20 @@ public class Project2 extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(jButton4)
                     .addComponent(teamtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel13)
                             .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
+                            .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jButton2)
-                            .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                            .addComponent(jButton2)))
+                    .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
@@ -332,48 +335,53 @@ public class Project2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        name=nametxt.getText();
-        age=Integer.parseInt(agetxt.getText());
-        number=Integer.parseInt(numtxt.getText());
-        if(malerb.isSelected())
-            gender="Male";
-        else if(femalerb.isSelected())
-            gender="Female";
-        
-        email=emailtxt.getText();
-        id=idtxt.getText();
-        date=datetxt.getText();
-        level=leveltxt.getText();
-        team=teamtxt.getText();
-        title=titletxt.getText();
-        
-        Project2 pro= new Project2();
+        name = nametxt.getText();
+        age = Integer.parseInt(agetxt.getText());
+        number = Integer.parseInt(numtxt.getText());
+        if (malerb.isSelected()) {
+            gender = "Male";
+        } else if (femalerb.isSelected()) {
+            gender = "Female";
+        }
+
+        email = emailtxt.getText();
+        id = idtxt.getText();
+        date = datetxt.getText();
+        level = leveltxt.getText();
+        team = teamtxt.getText();
+        title = titletxt.getText();
+
+        Project2 pro = new Project2();
         pro.setName(name);
         pro.setAge(age);
         pro.setNumber(number);
         pro.setEmail(email);
+        pro.setGender(gender);
         pro.setId(id);
         pro.setDate(date);
         pro.setLevel(level);
         pro.setTeam(team);
         pro.setTitle(title);
-        
+
         aList.add(pro);
         count++;
-        
+
         JLabel imageLabel = new JLabel();
         String selectedImagePath = null;
         ImageIcon imageicon = new ImageIcon(selectedImagePath);
-        Image img = imageicon.getImage().getScaledInstance(1000, 1000, Image.SCALE_SMOOTH);
-        imageLabel.setIcon(new ImageIcon(img));
+        Image img = imageicon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+        imageLabel.setIcon(new ImageIcon(img));//(new ImageIcon(img));
+
+        System.out.println(imageLabel);
         
-        Object data[]={nametxt.getText(),agetxt.getText(),numtxt.getText(),gender,emailtxt.getText(),idtxt.getText(),datetxt.getText(),leveltxt.getText(),teamtxt.getText(),titletxt.getText(),imageLabel};
+        
+        Object data[] = {nametxt.getText(), agetxt.getText(), numtxt.getText(), gender, emailtxt.getText(), idtxt.getText(), datetxt.getText(), leveltxt.getText(), teamtxt.getText(), titletxt.getText(), imageLabel};
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        jTable1.setFillsViewportHeight(true);
+        jTable1.getColumn("Photo").setCellRenderer(new myTabelCellRenderer());
         model.addRow(data);
         
-        
-        
-        
+
         nametxt.setText("");
         agetxt.setText("");
         numtxt.setText("");
@@ -385,66 +393,60 @@ public class Project2 extends javax.swing.JFrame {
         teamtxt.setText("");
         titletxt.setText("");
 
-
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String search=JOptionPane.showInputDialog(null,"Please enter the name to search");
-        for(int i=0;i<aList.size();i++)
-        {
-            if(search.equalsIgnoreCase(aList.get(i).getName()))
-            {
-                JOptionPane.showMessageDialog(null, "Name:"+aList.get(i).getName()+"\n Age:"+aList.get(i).getAge());
+        String search = JOptionPane.showInputDialog(null, "Please enter the name to search");
+        for (int i = 0; i < aList.size(); i++) {
+            if (search.equalsIgnoreCase(aList.get(i).getName())) {
+                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
             }
         }
-
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if(nametxt.getText().equals(""))
-        {
-            JOptionPane.showMessageDialog(null,"You must enter the name");
-            
-        }
-        else if(count==0){
-            JOptionPane.showMessageDialog(null,"No data for deletion");
-        }
-        else{
-            name=nametxt.getText();
-            
-            for(int i=0;i<aList.size();i++)
-            {
-                if(aList.get(i).getName().equals(name))
-                {
+        if (nametxt.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "You must enter the name");
+
+        } else if (count == 0) {
+            JOptionPane.showMessageDialog(null, "No data for deletion");
+        } else {
+            name = nametxt.getText();
+
+            for (int i = 0; i < aList.size(); i++) {
+                if (aList.get(i).getName().equals(name)) {
                     aList.remove(i);
-                    count=count-1;
-                    JOptionPane.showMessageDialog(null, "Emp deleted");
+                    count = count - 1;
+                    JOptionPane.showMessageDialog(null, "Data deleted");
                     break;
                 }
-                if(i==count-1)
-                {
+                if (i == count - 1) {
                     JOptionPane.showMessageDialog(null, "Could not be deleted");
                 }
             }
         }
-        DefaultTableModel model=(DefaultTableModel) jTable1.getModel();
-        try{
-            
-             int row=jTable1.getSelectedRow();
-        model.removeRow(row);
-        }
-        catch(Exception ex)
-        {
-            JOptionPane.showMessageDialog(null,ex);
-        }
-       
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        try {
 
+            int row = jTable1.getSelectedRow();
+            model.removeRow(row);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
 
+        nametxt.setText("");
+        agetxt.setText("");
+        numtxt.setText("");
+        //gentxt.setText("");
+        emailtxt.setText("");
+        idtxt.setText("");
+        datetxt.setText("");
+        leveltxt.setText("");
+        teamtxt.setText("");
+        titletxt.setText("");
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -454,45 +456,40 @@ public class Project2 extends javax.swing.JFrame {
     }//GEN-LAST:event_datetxtActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        
-        int row=jTable1.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
-        nametxt.setText(model.getValueAt(row,0).toString());
-        agetxt.setText(model.getValueAt(row,1).toString());
-        numtxt.setText(model.getValueAt(row,2).toString());
+
+        int row = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        nametxt.setText(model.getValueAt(row, 0).toString());
+        agetxt.setText(model.getValueAt(row, 1).toString());
+        numtxt.setText(model.getValueAt(row, 2).toString());
         //gentxt.setText(model.getValueAt(row,3).toString());
-        emailtxt.setText(model.getValueAt(row,4).toString());
-        idtxt.setText(model.getValueAt(row,5).toString());
-        datetxt.setText(model.getValueAt(row,6).toString());
-        leveltxt.setText(model.getValueAt(row,7).toString());
-        teamtxt.setText(model.getValueAt(row,8).toString());
-        titletxt.setText(model.getValueAt(row,9).toString());
+        emailtxt.setText(model.getValueAt(row, 4).toString());
+        idtxt.setText(model.getValueAt(row, 5).toString());
+        datetxt.setText(model.getValueAt(row, 6).toString());
+        leveltxt.setText(model.getValueAt(row, 7).toString());
+        teamtxt.setText(model.getValueAt(row, 8).toString());
+        titletxt.setText(model.getValueAt(row, 9).toString());
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        int i=jTable1.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
-        if(i>=0)
-        {
-           model.setValueAt(nametxt.getText(), i, 0); 
-           model.setValueAt(agetxt.getText(), i, 1); 
-           model.setValueAt(numtxt.getText(), i, 2); 
-           //model.setValueAt(gentxt.getText(), i, 3); 
-           model.setValueAt(emailtxt.getText(), i, 4); 
-           model.setValueAt(idtxt.getText(), i, 5); 
-           model.setValueAt(datetxt.getText(), i, 6); 
-           model.setValueAt(leveltxt.getText(), i, 7); 
-           model.setValueAt(teamtxt.getText(), i, 8); 
-           model.setValueAt(titletxt.getText(), i, 9); 
+        int i = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        if (i >= 0) {
+            model.setValueAt(nametxt.getText(), i, 0);
+            model.setValueAt(agetxt.getText(), i, 1);
+            model.setValueAt(numtxt.getText(), i, 2);
+            //model.setValueAt(gentxt.getText(), i, 3); 
+            model.setValueAt(emailtxt.getText(), i, 4);
+            model.setValueAt(idtxt.getText(), i, 5);
+            model.setValueAt(datetxt.getText(), i, 6);
+            model.setValueAt(leveltxt.getText(), i, 7);
+            model.setValueAt(teamtxt.getText(), i, 8);
+            model.setValueAt(titletxt.getText(), i, 9);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error");
         }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Error");
-        }
-        
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -502,23 +499,20 @@ public class Project2 extends javax.swing.JFrame {
     }//GEN-LAST:event_malerbActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        JFileChooser browseImageFile = new JFileChooser("C:\\Users\\Public\\Pictures");
+        JFileChooser browseImageFile = new JFileChooser("C:\\Users\\ruchi\\OneDrive\\Pictures");
         FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
         browseImageFile.addChoosableFileFilter(fnef);
         int showOpenDialogue = browseImageFile.showOpenDialog(null);
-        
+
         if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
             File selectedImageFile = browseImageFile.getSelectedFile();
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
             ImageIcon ii = new ImageIcon(selectedImagePath);
             Image image = ii.getImage().getScaledInstance(photo.getWidth(), photo.getHeight(), Image.SCALE_SMOOTH);
-             
+
             photo.setIcon(new ImageIcon(image));
         }
-
-
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -595,39 +589,39 @@ public class Project2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setAge(int age) {
-        
-        this.age=age;
+
+        this.age = age;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private int getAge() {
-        
+
         return age;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setNumber(int number) {
-        this.number=number; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.number = number; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setEmail(String email) {
-        this.email=email; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.email = email; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setId(String id) {
-        this.id=id; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.id = id; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setDate(String date) {
-        this.date=date; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.date = date; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setLevel(String level) {
-        this.level=level; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.level = level; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private void setTeam(String team) {
-        this.team=team; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.team = team; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     private int getNumber() {
@@ -656,5 +650,25 @@ public class Project2 extends javax.swing.JFrame {
 
     private String getTeam() {
         return team; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setGender(String gender) {
+        this.gender = gender; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    class myTabelCellRenderer implements TableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+
+            TableColumn tb = jTable1.getColumn("Photo");
+            tb.setMaxWidth(60);
+            tb.setMinWidth(60);
+
+            jTable1.setRowHeight(60);
+
+            return (Component) value;
+        }
+
     }
 }
