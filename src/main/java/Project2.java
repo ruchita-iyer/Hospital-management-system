@@ -105,12 +105,6 @@ public class Project2 extends javax.swing.JFrame {
 
         jLabel2.setText("Age");
 
-        nametxt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nametxtMouseClicked(evt);
-            }
-        });
-
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,21 +130,9 @@ public class Project2 extends javax.swing.JFrame {
 
         jLabel4.setText("Employee ID");
 
-        idtxt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                idtxtMouseClicked(evt);
-            }
-        });
-
         jLabel5.setText("Gender");
 
         jLabel6.setText("Start Date");
-
-        datetxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                datetxtActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("Personal Details");
 
@@ -445,7 +427,25 @@ public class Project2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String search = JOptionPane.showInputDialog(null, "Please enter the employee id to search");
+        String search = JOptionPane.showInputDialog(null, "Please enter 1 for Name search and 2 for ID search");
+        
+        if(search.equals("1"))
+        {    
+            String txt=JOptionPane.showInputDialog(null, "Please enter name");
+            
+            for (int i = 0; i < aList.size(); i++) {
+            if (txt.equalsIgnoreCase(aList.get(i).getName())) {
+                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No result found");
+            }
+        }     
+        }
+        else if(search.equals("2"))
+        {
+            String txt=JOptionPane.showInputDialog(null, "Please enter id");
         
         for (int i = 0; i < aList.size(); i++) {
             if (search.equalsIgnoreCase(aList.get(i).getId())) {
@@ -455,6 +455,7 @@ public class Project2 extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, "No result found");
             }
+        }
         }
 
         // TODO add your handling code here:
@@ -503,10 +504,6 @@ public class Project2 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void datetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datetxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_datetxtActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
 
@@ -569,34 +566,6 @@ public class Project2 extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void nametxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nametxtMouseClicked
-        String search = JOptionPane.showInputDialog(null, "Please enter the name to search");
-        
-        for (int i = 0; i < aList.size(); i++) {
-            if (search.equalsIgnoreCase(aList.get(i).getName())) {
-                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "No result found");
-            }
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_nametxtMouseClicked
-
-    private void idtxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idtxtMouseClicked
-String search = JOptionPane.showInputDialog(null, "Please enter the employee id to search");
-        
-        for (int i = 0; i < aList.size(); i++) {
-            if (search.equalsIgnoreCase(aList.get(i).getId())) {
-                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null, "No result found");
-            }
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_idtxtMouseClicked
 
     /**
      * @param args the command line arguments

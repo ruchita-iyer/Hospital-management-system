@@ -217,9 +217,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nametxt">
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nametxtMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="agetxt">
     </Component>
@@ -258,9 +255,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="idtxt">
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="idtxtMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -273,9 +267,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="datetxt">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="datetxtActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
