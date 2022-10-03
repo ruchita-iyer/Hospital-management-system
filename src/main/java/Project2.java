@@ -2,9 +2,12 @@
 import java.awt.Component;
 import java.awt.Image;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -29,6 +32,7 @@ public class Project2 extends javax.swing.JFrame {
     private int age;
     private int number;
     private int count;
+    private JLabel imageLabel;
 
     /**
      * Creates new form Project2
@@ -93,12 +97,19 @@ public class Project2 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         photo = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Name");
 
         jLabel2.setText("Age");
+
+        nametxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nametxtMouseClicked(evt);
+            }
+        });
 
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +135,12 @@ public class Project2 extends javax.swing.JFrame {
         jLabel3.setText("Human Resource System");
 
         jLabel4.setText("Employee ID");
+
+        idtxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                idtxtMouseClicked(evt);
+            }
+        });
 
         jLabel5.setText("Gender");
 
@@ -154,11 +171,11 @@ public class Project2 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Age", "Phone Number", "Email", "Gender", "Employee ID", "Start Date", "Level", "Team", "Title", "Photo"
+                "Name", "Age", "Phone Number", "Email", "Gender", "Employee ID", "Start Date", "Level", "Team", "Title"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -197,18 +214,21 @@ public class Project2 extends javax.swing.JFrame {
 
         jLabel14.setText("Please upload photo");
 
+        jLabel15.setText("Contact Information");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 37, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(296, 296, 296)
                         .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel7))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -219,11 +239,11 @@ public class Project2 extends javax.swing.JFrame {
                             .addComponent(jLabel10))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(numtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nametxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(numtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(119, 119, 119)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -249,31 +269,31 @@ public class Project2 extends javax.swing.JFrame {
                                                 .addComponent(jLabel13)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(82, 82, 82)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(82, 82, 82)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jButton3)
-                                                    .addComponent(jButton1)
-                                                    .addComponent(jButton5)
-                                                    .addComponent(jButton4)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(60, 60, 60)
-                                                .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(jButton3)
+                                            .addComponent(jButton1)
+                                            .addComponent(jButton5)
+                                            .addComponent(jButton4)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(216, 216, 216)
+                                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(malerb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(femalerb))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(154, 154, 154)
+                                .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(83, 83, 83)
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)))))
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 665, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                                .addComponent(jButton2))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel7))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,13 +312,14 @@ public class Project2 extends javax.swing.JFrame {
                     .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(malerb)
-                    .addComponent(femalerb)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jButton3)
-                    .addComponent(datetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(malerb)
+                        .addComponent(femalerb)
+                        .addComponent(jLabel5)
+                        .addComponent(jButton3)
+                        .addComponent(datetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,27 +329,36 @@ public class Project2 extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
                     .addComponent(jLabel12)
                     .addComponent(jButton4)
                     .addComponent(teamtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel15)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel13)
-                            .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13)
+                                    .addComponent(titletxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(36, 36, 36))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(numtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(jButton2)))
-                    .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton2)
+                            .addComponent(emailtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -338,19 +368,44 @@ public class Project2 extends javax.swing.JFrame {
         name = nametxt.getText();
         age = Integer.parseInt(agetxt.getText());
         number = Integer.parseInt(numtxt.getText());
-        if (malerb.isSelected()) {
+        String num = String.valueOf(number);
+        
+        if (malerb.isSelected()) 
             gender = "Male";
-        } else if (femalerb.isSelected()) {
-            gender = "Female";
-        }
-
+        else if (femalerb.isSelected()) 
+            gender = "Female";        
+        
         email = emailtxt.getText();
         id = idtxt.getText();
+        
+        
         date = datetxt.getText();
         level = leveltxt.getText();
         team = teamtxt.getText();
         title = titletxt.getText();
-
+         JLabel imageLabel = new JLabel();
+        if(age<0)
+        {
+            JOptionPane.showMessageDialog(null, "Please check age");
+        }
+        else if(num.length()!=10)
+        {
+            JOptionPane.showMessageDialog(null, "Please enter correct number");
+            
+        }
+        else if(id.length()!=6)
+        {
+            JOptionPane.showMessageDialog(null, "Please enter 6 digit id");
+        }
+        else
+        {
+           
+        String selectedImagePath = null;
+        ImageIcon imageicon = new ImageIcon(selectedImagePath);
+        Image img = imageicon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+        System.out.println(img);
+        imageLabel.setIcon(new ImageIcon(img));//(new ImageIcon(img));
+        
         Project2 pro = new Project2();
         pro.setName(name);
         pro.setAge(age);
@@ -362,25 +417,18 @@ public class Project2 extends javax.swing.JFrame {
         pro.setLevel(level);
         pro.setTeam(team);
         pro.setTitle(title);
+        pro.setImage(imageLabel);
 
         aList.add(pro);
-        count++;
+        count++;     
 
-        JLabel imageLabel = new JLabel();
-        String selectedImagePath = null;
-        ImageIcon imageicon = new ImageIcon(selectedImagePath);
-        Image img = imageicon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
-        imageLabel.setIcon(new ImageIcon(img));//(new ImageIcon(img));
-
-        System.out.println(imageLabel);
-        
-        
         Object data[] = {nametxt.getText(), agetxt.getText(), numtxt.getText(), gender, emailtxt.getText(), idtxt.getText(), datetxt.getText(), leveltxt.getText(), teamtxt.getText(), titletxt.getText(), imageLabel};
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         jTable1.setFillsViewportHeight(true);
-        jTable1.getColumn("Photo").setCellRenderer(new myTabelCellRenderer());
+        //jTable1.getColumn("Photo").setCellRenderer(new myTabelCellRenderer());
         model.addRow(data);
         
+        }
 
         nametxt.setText("");
         agetxt.setText("");
@@ -397,10 +445,15 @@ public class Project2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String search = JOptionPane.showInputDialog(null, "Please enter the name to search");
+        String search = JOptionPane.showInputDialog(null, "Please enter the employee id to search");
+        
         for (int i = 0; i < aList.size(); i++) {
-            if (search.equalsIgnoreCase(aList.get(i).getName())) {
+            if (search.equalsIgnoreCase(aList.get(i).getId())) {
                 JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No result found");
             }
         }
 
@@ -517,6 +570,34 @@ public class Project2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void nametxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nametxtMouseClicked
+        String search = JOptionPane.showInputDialog(null, "Please enter the name to search");
+        
+        for (int i = 0; i < aList.size(); i++) {
+            if (search.equalsIgnoreCase(aList.get(i).getName())) {
+                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No result found");
+            }
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_nametxtMouseClicked
+
+    private void idtxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idtxtMouseClicked
+String search = JOptionPane.showInputDialog(null, "Please enter the employee id to search");
+        
+        for (int i = 0; i < aList.size(); i++) {
+            if (search.equalsIgnoreCase(aList.get(i).getId())) {
+                JOptionPane.showMessageDialog(null, "Name:" + aList.get(i).getName() + "\n Age:" + aList.get(i).getAge()+ "\n Phone number:" + aList.get(i).getNumber()+ "\n Email:" + aList.get(i).getEmail()+ "\n Gender:" + aList.get(i).getGender()+ "\n Employee Id:" + aList.get(i).getId()+ "\n Start Date:" + aList.get(i).getDate()+ "\n Level:" + aList.get(i).getLevel()+ "\n Team:" + aList.get(i).getTeam()+ "\n Title:" + aList.get(i).getTitle());
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "No result found");
+            }
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_idtxtMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -569,6 +650,7 @@ public class Project2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -654,6 +736,10 @@ public class Project2 extends javax.swing.JFrame {
 
     private void setGender(String gender) {
         this.gender = gender; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void setImage(JLabel imageLabel) {
+         this.imageLabel = imageLabel;// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     class myTabelCellRenderer implements TableCellRenderer {
