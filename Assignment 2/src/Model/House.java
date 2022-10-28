@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
-/**
- *
- * @author ruchi
- */
 public class House {
-    
+
     private String address;
     private String aptNo;
     private String state;
@@ -17,7 +9,7 @@ public class House {
     private City city;
     private int pin;
     
-    public House(String add, String apt, String st, Community community, City c, int pin){
+    public House(String add, String apt, String st, Community community,City c, int pin){
         
         
         this.address = add;
@@ -76,5 +68,4 @@ public class House {
     public void setPin(int pin) {
         this.pin = pin;
     }
-    
 }

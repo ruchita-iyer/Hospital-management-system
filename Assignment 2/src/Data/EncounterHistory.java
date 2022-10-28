@@ -1,17 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Data;
 
-import java.util.ArrayList;
 import Model.Encounter;
 import Model.Person;
-/**
- *
- * @author ruchi
- */
+
+import java.util.ArrayList;
+
 public class EncounterHistory {
+
     private ArrayList<Encounter> encounterHistory;
 
     public EncounterHistory() {
@@ -29,4 +24,5 @@ public class EncounterHistory {
     public void setEncounterHistory(ArrayList<Encounter> encounterHistory) {
         this.encounterHistory = encounterHistory;
     }
+
 }

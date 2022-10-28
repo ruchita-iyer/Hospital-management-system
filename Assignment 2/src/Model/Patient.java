@@ -1,20 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
 import Data.EncounterHistory;
+import java.util.Date;
 
-/**
- *
- * @author ruchi
- */
-public class Patient {
+public class Patient extends Person{
+    
     private EncounterHistory encounterHistory;
 
-    public Patient(String fullName, House residence, String gender, String dob, int id, Encounter en) {
-        super(fullName, residence, gender, dob, id);
+    public Patient(String fullName, House residence, String gender,  int id, Encounter en) {
+        super(fullName, residence, gender, id);
         
         this.encounterHistory = new EncounterHistory();
         this.encounterHistory.addEncounter(en);
@@ -27,4 +21,8 @@ public class Patient {
     public void setEncounterHistory(EncounterHistory eh) {
         this.encounterHistory = eh;
     }
+    
+    
+
+
 }

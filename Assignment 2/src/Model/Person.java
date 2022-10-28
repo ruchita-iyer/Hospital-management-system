@@ -1,29 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
 import java.util.Date;
 
-/**
- *
- * @author ruchi
- */
 public class Person {
 
     private String fullName;
     private House residence;
     private String gender;
-    private String dob;
+    //private Date dob;
     private int id;
 
-    public Person(String fullName, House residence, String gender, String dob, int id) {
+    public Person(String fullName,
+            House residence,
+            String gender,
+            //Date dob,
+            int id) {
 
         this.fullName = fullName;
         this.residence = residence;
         this.gender = gender;
-        this.dob = dob;
+        //this.dob = dob;
         this.id = id;
 
     }
@@ -52,13 +48,13 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getDob() {
+    /*public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
-    }
+    }*/
 
     public int getId() {
         return id;
