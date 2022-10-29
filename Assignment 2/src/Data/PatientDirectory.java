@@ -2,7 +2,6 @@ package Data;
 
 import Model.Encounter;
 import Model.Patient;
-import Model.Person;
 
 import java.util.ArrayList;
 

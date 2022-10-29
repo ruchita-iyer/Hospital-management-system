@@ -1,7 +1,6 @@
 package Model;
 
 import Data.EncounterHistory;
-import java.util.Date;
 
 public class Patient extends Person{
     

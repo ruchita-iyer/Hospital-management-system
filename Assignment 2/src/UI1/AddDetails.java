@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package UI;
+package UI1;
 
+import UI.*;
 import Model.City;
 import Model.Community;
 import Model.Encounter;
@@ -22,13 +23,13 @@ import java.util.Date;
  *
  * @author harshaljaiswal
  */
-public class MedSystemFrame extends javax.swing.JFrame {
+public class AddDetails extends javax.swing.JFrame {
 
     /**
      * Creates new form MedSystemFrame
      */
     MedSystem ms ;
-    public MedSystemFrame() {
+    public AddDetails() {
         initComponents();
          ms = new MedSystem();
         
@@ -72,8 +73,8 @@ public class MedSystemFrame extends javax.swing.JFrame {
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        addPatient = new javax.swing.JButton();
+        viewPatient = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -84,17 +85,17 @@ public class MedSystemFrame extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(130, 566));
 
-        jButton1.setText("Person Details");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addPatient.setText("Add Patient");
+        addPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                addPatientActionPerformed(evt);
             }
         });
 
-        jButton2.setText("New Patient");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        viewPatient.setText("View Patients");
+        viewPatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                viewPatientActionPerformed(evt);
             }
         });
 
@@ -118,9 +119,9 @@ public class MedSystemFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(viewPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addPatient, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -128,9 +129,9 @@ public class MedSystemFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(151, 151, 151)
-                .addComponent(jButton1)
+                .addComponent(addPatient)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(viewPatient)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addGap(18, 18, 18)
@@ -169,17 +170,17 @@ public class MedSystemFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void viewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPatientActionPerformed
         // TODO add your handling code here:
-        PersonsScreen view = new PersonsScreen(ms);
+        ViewPatients view = new ViewPatients(ms);
         jSplitPane1.setRightComponent(view);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_viewPatientActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void addPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientActionPerformed
         // TODO add your handling code here:
-         PersonScreen view = new PersonScreen(ms);
+         AddPatient view = new AddPatient(ms);
         jSplitPane1.setRightComponent(view);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_addPatientActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -195,12 +196,12 @@ public class MedSystemFrame extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton addPatient;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton viewPatient;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,21 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package UI;
+package UI1;
 
+import UI.*;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author harshaljaiswal
  */
-public class MainFrameForm extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
 
     
     /**
      * Creates new form MainFrame
      */
-    public MainFrameForm() {
+    public MainFrame() {
         
         initComponents();
         
@@ -119,15 +120,15 @@ public class MainFrameForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String adminType=adminCB.getSelectedItem().toString();
-        if(adminType == "System Admin")
+        if("System Admin".equals(adminType))
         {
         if( txtUsername.getText().matches("sysadmin") && txtPassword.getText().matches("123")){
             JOptionPane.showMessageDialog(this, "System Admin Login Successful");
-            //AddDetails details = new AddDetails();
-            //details.setVisible(true);
+            AddDetails details = new AddDetails();
+            details.setVisible(true);
             
-           MedSystemFrame patient = new MedSystemFrame();
-           patient.setVisible(true);
+           //MedSystemFrame patient = new MedSystemFrame();
+           //patient.setVisible(true);
             
         }
         else
@@ -191,14 +192,18 @@ public class MainFrameForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrameForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrameForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrameForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrameForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -207,7 +212,7 @@ public class MainFrameForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrameForm().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }
