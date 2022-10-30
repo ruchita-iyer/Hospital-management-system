@@ -1,67 +1,92 @@
+/*
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+
 package Model;
 
-import java.util.Date;
-
+/**
+ *
+ * @author aakashrajawat
+ */
 public class Person {
+    private String personName;
+    private int age;
+    private Patient patient;
+    private int weight;
+    private String community;
+    private String address;
+    private String city;
+    private boolean hasVitalSigns;
 
-    private String fullName;
-    private House residence;
-    private String gender;
-    //private Date dob;
-    private int id;
-
-    public Person(String fullName,
-            House residence,
-            String gender,
-            //Date dob,
-            int id) {
-
-        this.fullName = fullName;
-        this.residence = residence;
-        this.gender = gender;
-        //this.dob = dob;
-        this.id = id;
-
+    public boolean hasVitalSigns() {
+        return hasVitalSigns;
     }
 
-    public String getFullName() {
-        return fullName;
+    public void setHasVitalSigns(boolean hasVitalSigns) {
+        this.hasVitalSigns = hasVitalSigns;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public int getweight() {
+        return weight;
     }
 
-    public House getResidence() {
-        return residence;
+    public void setweight(int weight) {
+        this.weight = weight;
     }
 
-    public void setResidence(House residence) {
-        this.residence = residence;
+    public String getCommunity() {
+        return community;
     }
 
-    public String getGender() {
-        return gender;
+    public void setCommunity(String community) {
+        this.community = community;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public String getAddress() {
+        return address;
     }
 
-    /*public Date getDob() {
-        return dob;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }*/
-
-    public int getId() {
-        return id;
+    public String getCity() {
+        return city;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCity(String city) {
+        this.city = city;
     }
-
+    
+    public String getPersonName() {
+        return personName;
+    }
+    
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public Patient getPatient() {
+        return patient;
+    }
+    
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return this.personName;
+    }
 }
